@@ -6,7 +6,7 @@
 //  Copyright 2006 Positive Spin Media. All rights reserved.
 //
 
-@import MMTabBarView;
+#import <MMTabBarView/MMTabBarView.h>
 
 #import "DemoWindowController.h"
 #import "DemoFakeModel.h"

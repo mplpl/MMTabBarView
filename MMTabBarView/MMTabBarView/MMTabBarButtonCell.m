@@ -1098,12 +1098,14 @@ inline static bool useShadow(NSView* const inView) {
     // we draw nothing by default
     
         // update hidden state of close button
-    if (self.tabBarView.onlyShowCloseOnHover) {
-        [self.closeButton setHidden:!self.mouseHovered];
-    } else {
-        if (self.closeButton.isHidden == YES)
-            [self.closeButton setHidden:NO];
-    }
+    @try {
+        if (self.tabBarView.onlyShowCloseOnHover) {
+            [self.closeButton setHidden:!self.mouseHovered];
+        } else {
+            if (self.closeButton.isHidden == YES)
+                [self.closeButton setHidden:NO];
+        }
+    } @catch (NSException *) {}
 }
 
 @end

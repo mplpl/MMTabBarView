@@ -62,7 +62,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)viewWillDraw {
 
     NSView *superview = self.superview;
-    [superview setNeedsDisplayInRect:superview.bounds];
+    @try {
+        [superview setNeedsDisplayInRect:superview.bounds];
+    } @catch (NSException *) {}
 
     [super viewWillDraw];
 }

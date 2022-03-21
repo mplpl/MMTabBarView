@@ -91,7 +91,9 @@ NS_ASSUME_NONNULL_BEGIN
 	if (self.mouseHovered) {
 		NSEvent* const event = NSApp.currentEvent;
 		if (event != nil) {
-			[self.cell mouseExited:event];
+            @try {
+                [self.cell mouseExited:event];
+            } @catch (NSException *) {}
 		}
 	}
 
